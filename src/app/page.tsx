@@ -1,18 +1,31 @@
 'use client'
 import Image from 'next/image'
 import React, {useState, useEffect} from 'react'
-import {Search} from "./components/Search";
+
 import {UserProps} from "./types/users";
+
+import {Search} from "./components/Search";
+import {User} from "./components/User";
+import {Error} from "./components/Error";
 
 export default function Home() {
       const [user, setUser] = useState<UserProps | null>(null);
+      const [erro, setErro] = useState(false);
 
       const loadUser = async (userName: string) => {
+        setErro(false);
+        setUser(null);
+
         const res = await fetch(`https://api.github.com/users/${userName}`,{
           method: 'GET',
         });
 
         const data = await res.json();
+
+        if (res.status === 404) {
+              setErro(true);
+              return;
+        }
 
         const {avatar_url, login, location, followers, following} = data;
 
@@ -35,26 +48,34 @@ export default function Home() {
     >
       
      <h1
-      className='text-center text-white text-4xl mb-[1rem]'
+      className='text-center text-white text-4xl mb-[1rem] font-bold'
       >
         GitHub finder
         </h1>
 
       <div
-      className='flex items-center justify-center'
+      className='flex items-center justify-center flex-col'
       >
       <div
-      className='flex max-w-[500px] m-y-0 p-[2rem]  
-      rounded-lg  column bg-[#2b3566] items-center justify-center '
+      className='flex  m-y-0 p-[3rem]  
+      rounded-[20px]  column bg-[#2b3566] items-center justify-center w-[600px]
+      '
       >
  
         
         <Search
         loadUser={loadUser}
         />
+      </div>
 
         {
-          user && <p>{user.login}</p>
+          user && 
+          <User {...user}/>
+        }
+
+        {
+          erro &&
+          <Error/>
         }
 
       <p
@@ -62,7 +83,6 @@ export default function Home() {
       >
 
       </p>
-      </div>
       </div>
     </main>
   )
