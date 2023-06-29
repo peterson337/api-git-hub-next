@@ -57,8 +57,9 @@ export default function Home() {
       className='flex items-center justify-center flex-col'
       >
       <div
-      className='flex  m-y-0 p-[3rem]  
-      rounded-[20px]  column bg-[#2b3566] items-center justify-center w-[600px]
+      className='flex  m-y-0 md:p-[3rem]   p-[2rem]
+      rounded-[20px]  column bg-[#2b3566] items-center justify-center md:w-[600px]
+      w-[330px]
       '
       >
  
