@@ -27,6 +27,9 @@ export default function Home() {
               return;
         }
 
+        console.log(data);
+        console.log(data.repos_url);
+
         const {avatar_url, login, location, followers, following} = data;
 
         const userData: UserProps = {

@@ -1,7 +1,11 @@
+'use client'
 import React from 'react'
 import { MdLocationPin } from 'react-icons/md';
 import {UserProps} from "../types/users";
+import {Repos} from "./Repos";
+
 import Link from 'next/link';
+import { useRouter } from 'next/navigation'
 
 export const User = ({
     avatar_url,
@@ -9,7 +13,12 @@ export const User = ({
     location, 
     followers, 
     following
-} : UserProps) => {
+} : UserProps ) => {
+
+    const router = useRouter()
+
+    console.log(router)
+
   return (
     <div
     className='flex bg-[#2b3566] rounded-[1rem] 
@@ -91,9 +100,14 @@ export const User = ({
                 </p>
             </div>
         </div>
-        <Link href={`/repos/${login}`}>
+            {/* 
+            /repos/${login}
+             */}
+        <Link href={`/Repos`}>
                 Ver melhores projetos
-      </Link>
+        </Link>
+
+        
     </div>
   )
 }
