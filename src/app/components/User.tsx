@@ -2,7 +2,7 @@
 import React from 'react'
 import { MdLocationPin } from 'react-icons/md';
 import {UserProps} from "../types/users";
-import {Repos} from "./Repos";
+import {Repos} from "../Teste/page";
 
 import Link from 'next/link';
 import { useRouter } from 'next/navigation'
@@ -13,11 +13,7 @@ export const User = ({
     location, 
     followers, 
     following
-} : UserProps ) => {
-
-    const router = useRouter()
-
-    console.log(router)
+} : UserProps) => {
 
   return (
     <div
@@ -34,7 +30,7 @@ export const User = ({
         <img 
         src={avatar_url} 
         alt={login}
-        className=' md:w-[190px] md:h-[190px] w-[130px] md:h-[130px]
+        className=' md:w-[190px] md:h-[190px] w-[130px] h-[130px]
                    border-4 
                  border-sky-500 rounded-[50%]'
          />
@@ -100,12 +96,15 @@ export const User = ({
                 </p>
             </div>
         </div>
-            {/* 
-            /repos/${login}
-             */}
-        <Link href={`/Repos`}>
+
+        <button
+         className='bg-[#1197f0] md:p-5 p-3 rounded-full hover:bg-[#42b5ff]'
+        >
+        <Link href={`https://github.com/${login}`}>
                 Ver melhores projetos
-        </Link>
+          </Link>
+       
+        </button>
 
         
     </div>

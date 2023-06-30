@@ -17,7 +17,7 @@ export const Search = ({loadUser} : SearchProps) => {
 
   return (
     <div
-    className='text-white '
+    className='text-white m-3 '
     >
         <h2
         className='text-3xl mb-5 font-bold	'
@@ -30,7 +30,7 @@ export const Search = ({loadUser} : SearchProps) => {
         className='flex gap-[0.5rem] justify-center align-center'
         >
             <input 
-            className=' p-[0.6rem] border-0 rounded-full text-[#2b3566]'
+            className=' md:p-[0.6rem] border-0 rounded-full text-[#2b3566] pr-0 pl-2'
             type="text"
             placeholder='Digite o nome do usuário'
             onChange={(e) => setuserName(e.target.value)}
