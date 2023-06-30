@@ -2,10 +2,8 @@
 import React from 'react'
 import { MdLocationPin } from 'react-icons/md';
 import {UserProps} from "../types/users";
-import {Repos} from "../Teste/page";
 
 import Link from 'next/link';
-import { useRouter } from 'next/navigation'
 
 export const User = ({
     avatar_url,

@@ -11,6 +11,7 @@ import {Error} from "./components/Error";
 export default function Home() {
       const [user, setUser] = useState<UserProps | null>(null);
       const [erro, setErro] = useState(false);
+      const [userName, setUserName] = useState('');
 
       const loadUser = async (userName: string) => {
         setErro(false);
@@ -41,6 +42,8 @@ export default function Home() {
         };
 
         setUser(userData)
+        setUserName(userName);
+
       }
 
   return (
@@ -74,7 +77,8 @@ export default function Home() {
 
         {
           user && 
-          <User {...user}/>
+          <User {...user}
+          />
         }
 
         {
