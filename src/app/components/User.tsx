@@ -96,7 +96,7 @@ export const User = ({
         </div>
 
         <button
-         className='bg-[#1197f0] md:p-5 p-3 rounded-full hover:bg-[#42b5ff]'
+         className='bg-[#1197f0] md:p-4 p-3 rounded-full hover:bg-[#42b5ff]'
         >
         <Link href={`https://github.com/${login}`}>
                 Ver melhores projetos
