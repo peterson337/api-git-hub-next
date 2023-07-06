@@ -5,6 +5,8 @@ import {UserProps} from "../types/users";
 
 import Link from 'next/link';
 
+import Repos from "../[id]/page";
+
 export const User = ({
     avatar_url,
     login, 
@@ -98,7 +100,7 @@ export const User = ({
         <button
          className='bg-[#1197f0] md:p-4 p-3 rounded-full hover:bg-[#42b5ff]'
         >
-        <Link href={`https://github.com/${login}`}>
+        <Link href={`/${login}`}>
                 Ver melhores projetos
           </Link>
        
