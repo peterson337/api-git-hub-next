@@ -7,7 +7,7 @@ type SearchProps = {
     loadUser: (userName: string) => Promise<void>;
 }
 export const Search = ({loadUser} : SearchProps) => {
-       const [userName, setuserName] = useState("peterson337"); 
+       const [userName, setuserName] = useState(""); 
 
        const handlerKeyDown = (e: KeyboardEvent) => {
                     if (e.key === "Enter") {
